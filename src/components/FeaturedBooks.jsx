@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
+
 // Import book images
 import book1 from '../assets/book1.jpeg';
 import book2 from '../assets/book2.jpg';
@@ -24,8 +25,13 @@ const featuredBooks = [
 
 const FeaturedBooksSection = () => {
     return (
-        <section className="w-full min-h-screen bg-blue-50 flex flex-col justify-center items-center py-10 px-4 md:px-8">
-            <div className="max-w-7xl w-full mx-auto">
+        <section className="relative w-full min-h-screen bg-blue-50 flex flex-col justify-center items-center py-10 px-4 md:px-8 overflow-hidden">
+            {/* Rain Animation Background */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+                <RainAnimation />
+            </div>
+
+            <div className="max-w-7xl w-full mx-auto relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Featured Books</h2>
 
                 {/* Swiper Carousel */}
@@ -84,9 +90,19 @@ const FeaturedBooksSection = () => {
 
                 {/* Custom pagination container */}
                 <div className="custom-pagination mt-6 w-full flex justify-center"></div>
-
             </div>
         </section>
+    );
+};
+
+// Rain Animation Component
+const RainAnimation = () => {
+    return (
+        <div className="rain-container">
+            {[...Array(20)].map((_, index) => (
+                <div key={index} className="rain-drop" style={{ left: `${Math.random() * 100}%`, animationDuration: `${Math.random() * 2 + 1}s` }}></div>
+            ))}
+        </div>
     );
 };
 
