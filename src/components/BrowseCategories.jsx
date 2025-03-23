@@ -13,7 +13,6 @@ import {
     FaBriefcase, // Business
 } from 'react-icons/fa';
 
-// Sample images for each category (replace with your own images)
 import fictionImage from '../assets/FictionImage.jpg';
 import nonFictionImage from '../assets/non-fiction.jpg';
 import sciFiImage from '../assets/sci-fi.jpg';
