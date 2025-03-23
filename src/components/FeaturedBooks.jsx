@@ -26,10 +26,7 @@ const featuredBooks = [
 const FeaturedBooksSection = () => {
     return (
         <section className="relative w-full min-h-screen bg-blue-50 flex flex-col justify-center items-center py-10 px-4 md:px-8 overflow-hidden">
-            {/* Rain Animation Background */}
-            <div className="absolute inset-0 z-0 pointer-events-none">
-                <RainAnimation />
-            </div>
+
 
             <div className="max-w-7xl w-full mx-auto relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Featured Books</h2>
@@ -95,15 +92,5 @@ const FeaturedBooksSection = () => {
     );
 };
 
-// Rain Animation Component
-const RainAnimation = () => {
-    return (
-        <div className="rain-container">
-            {[...Array(20)].map((_, index) => (
-                <div key={index} className="rain-drop" style={{ left: `${Math.random() * 100}%`, animationDuration: `${Math.random() * 2 + 1}s` }}></div>
-            ))}
-        </div>
-    );
-};
 
 export default FeaturedBooksSection;
