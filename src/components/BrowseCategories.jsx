@@ -103,95 +103,13 @@ const categoryData = {
     },
 };
 
-const FloatingShape = ({ color, size, animationDuration }) => {
-    const [position, setPosition] = useState({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-    });
-    const [direction, setDirection] = useState({
-        x: Math.random() * 2 - 1, // -1 to 1
-        y: Math.random() * 2 - 1, // -1 to 1
-    });
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setPosition(oldPosition => {
-                let newX = oldPosition.x + direction.x * 0.1; // Adjust speed here
-                let newY = oldPosition.y + direction.y * 0.1; // Adjust speed here
-
-                // Bounce off the walls
-                if (newX > 100 || newX < 0) {
-                    setDirection(oldDirection => ({ ...oldDirection, x: -oldDirection.x }));
-                    newX = Math.max(0, Math.min(100, newX)); // Keep within bounds
-                }
-                if (newY > 100 || newY < 0) {
-                    setDirection(oldDirection => ({ ...oldDirection, y: -oldDirection.y }));
-                    newY = Math.max(0, Math.min(100, newY)); // Keep within bounds
-                }
-
-                return { x: newX, y: newY };
-            });
-        }, 20); // Adjust interval for smoother animation
-
-        return () => clearInterval(intervalId);
-    }, [direction]);
-
-    return (
-        <div
-            className="floating-shape"
-            style={{
-                position: 'absolute',
-                top: `${position.y}%`,
-                left: `${position.x}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                backgroundColor: color,
-                borderRadius: '50%',
-                opacity: 0.6,
-                animationDuration: `${animationDuration}s`,
-            }}
-        />
-    );
-};
 
 const EBookstoreSection = () => {
     const [selectedCategory, setSelectedCategory] = useState(categories[0]);
-    const numberOfShapes = 15;
 
     return (
         <section className="w-full min-h-screen bg-gradient-to-br from-blue-100 via-purple-50 to-purple-200 flex flex-col justify-center items-center py-10 px-4 md:px-8 relative overflow-hidden">
-            {/* Floating Shapes Background */}
-            <div className="absolute inset-0 w-full h-full">
-                {Array.from({ length: numberOfShapes }).map((_, index) => (
-                    <FloatingShape
-                        key={index}
-                        color={`hsl(${Math.random() * 360}, 50%, 70%)`} // Random pastel colors
-                        size={Math.random() * 30 + 10} // Random size
-                        animationDuration={Math.random() * 5 + 5} // Random animation duration
-                    />
-                ))}
-            </div>
 
-            {/* Decorative Shapes on Borders */}
-            {/* Make the border shapes less prominent or remove them */}
-            {/*  <div className="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 right-0 w-32 h-32 bg-purple-100 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
-            <div className="absolute top-0 right-0 w-24 h-24 bg-pink-50 rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-50 rounded-full transform -translate-x-1/2 translate-y-1/2"></div> */}
-
-            {/* SVG Shapes on Borders */}
-            {/*  <svg className="absolute top-1/4 left-0 w-32 h-32 text-blue-200 opacity-50 transform -translate-x-1/2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
-            </svg>
-            <svg className="absolute bottom-1/4 right-0 w-32 h-32 text-purple-200 opacity-50 transform translate-x-1/2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
-            </svg>
-            <svg className="absolute top-1/3 right-0 w-24 h-24 text-pink-100 opacity-50 transform translate-x-1/2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
-            </svg>
-            <svg className="absolute bottom-1/3 left-0 w-24 h-24 text-purple-100 opacity-50 transform -translate-x-1/2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z" />
-            </svg> */}
 
             <div className="max-w-7xl w-full mx-auto relative z-10 flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Browse Categories</h2>
