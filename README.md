@@ -41,52 +41,9 @@ Our featured component provides an elegant browsing experience for discovering t
 | Tablet | Horizontal Carousel | 2 | Touch swipe + directional buttons |
 | Desktop | Grid Display | 4 | Pagination controls + directional buttons |
 
-### 🎨 Design Specifications
-
-```css
-/* Signature shadow effect */
-.book-card {
-  box-shadow: 0 8px 6px -1px rgba(255, 182, 193, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 8px -1px rgba(255, 182, 193, 0.5);
-}
-
-/* Decorative corner elements */
-.decorative-shape {
-  background: theme('colors.pink.100');
-  opacity: 0.6;
-  border-radius: 100% 0 0 0;
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  z-index: -1;
-}
-```
 
 ## 🚀 Getting Started
 
-### Installation
-
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/bookhaven.git
-cd bookhaven
-```
-
-2. Install dependencies
-```bash
-npm install
-npm install lucide-react
-```
-
-3. Start development server
-```bash
-npm run dev
-```
 
 ### Component Usage
 
@@ -115,25 +72,6 @@ function App() {
 />
 ```
 
-## 📦 Project Structure
-
-```
-src/
-├── components/
-│   ├── BestsellersCarousel/
-│   │   ├── index.jsx              // Main component
-│   │   ├── BookCard.jsx           // Individual book display
-│   │   ├── NavigationControls.jsx // Prev/next buttons
-│   │   └── Pagination.jsx         // Page indicators
-│   ├── assets/
-│   │   ├── book-covers/
-│   │   │   ├── book1.jpg
-│   │   │   ├── book2.jpg
-│   │   │   └── ...
-│   │   └── icons/
-└── hooks/
-    └── useCarousel.js             // Custom carousel logic
-```
 
 ## 🌐 Deployment
 
