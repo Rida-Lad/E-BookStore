@@ -11,6 +11,14 @@
 
 BookHaven is a modern e-commerce platform designed for digital book enthusiasts. This project showcases a sleek, responsive interface with optimized user experience across all devices.
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="./public/screenshots/hero-section.png" width="45%" alt="Hero Section">
+  <img src="./public/screenshots/carousel.png" width="45%" alt="Carousel">
+  <img src="./public/screenshots/swipercss.png" width="50%" alt=" swipercss" style="margin-top: 20px">
+</div>
+
 ## 🏆 Bestsellers Carousel Component
 
 Our featured component provides an elegant browsing experience for discovering top-selling e-books.
