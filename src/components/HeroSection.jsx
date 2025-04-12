@@ -24,7 +24,7 @@ const HeroSection = () => {
   return (
     <section className="w-full min-h-screen bg-gradient-to-r from-blue-50 to-white relative flex flex-col items-center justify-center">
       {/* Regular Navbar */}
-      <nav className="w-full px-6 md:px-12 py-4 flex justify-between items-center z-40 bg-transparent shadow-none absolute top-0 left-0">
+      <nav className="w-full mt-5 px-6 md:px-12 py-4 flex justify-between items-center z-40 bg-transparent shadow-none absolute top-0 left-0">
         <div style={{ fontFamily: 'Dancing Script' }} className="text-3xl md:text-4xl font-bold text-blue-600">BookHaven</div>
         
         {/* Desktop Navigation */}
